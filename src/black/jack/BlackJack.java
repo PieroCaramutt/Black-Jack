@@ -13,9 +13,10 @@ public class BlackJack {
     /**
      * @param args the command line arguments
      */
-    public void game(){}
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+    public static void main(String[] args)
+    {  
+       Player playerOne = new Player("Player One", 100);
+       Player dealer = new Player("Dealer", playerOne.getBet());
+   }
     
 }

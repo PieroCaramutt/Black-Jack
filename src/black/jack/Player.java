@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package black.jack;
+import java.util.Random;
 
 /**
  *
@@ -12,18 +13,30 @@ public class Player {
     
     private int counter = 2;
     private Card[] cards = new Card[counter];
-    private String number;
+    private String name;
     private int bet;
+    Random rand = new Random();
+    GenerateCards decks = new GenerateCards();
     
     public Player(String num, int _bet){
-        number = num;
+        name = num;
         bet = _bet;
     }
     
+    public int getBet(){
+        return bet;}
+    public String getNumber(){return name;}
+    
     public void addCard(){
+        counter++;
+        for(int i=0; i<counter; i++){
+            cards[i]=decks.deck[rand.nextInt()];
+        }
     }
     
-    public String showCards(){
-        return "cards";
+    public void showCards(){
+        for(Card c : cards){
+            System.out.println(c.getSuit()+" "+c.getValue());
+        }
     }
 }
