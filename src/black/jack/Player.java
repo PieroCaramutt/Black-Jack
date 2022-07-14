@@ -17,15 +17,11 @@ public abstract class Player{
     private int bet;
     
     
-    Random rand = new Random();
-    GenerateCards decks = new GenerateCards();
-    
     public Player(String num, int _bet){
         name = num;
         bet = _bet;
     }
     
-    public int getCounter(){return counter;}
     public int getBet(){return bet;}
     public String getNumber(){return name;}
     

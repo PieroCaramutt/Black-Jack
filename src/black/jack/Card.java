@@ -29,6 +29,8 @@ public enum Value {
     }
     public int getNum(){return num;}
 }
+
+
 private Suit suit;
 private Value value;
 public Card(Suit s,Value v)
