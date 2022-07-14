@@ -9,12 +9,14 @@ import java.util.Random;
  *
  * @author User
  */
-public class Player {
+public abstract class Player{
     
     private int counter = 2;
     private Card[] cards = new Card[counter];
     private String name;
     private int bet;
+    
+    
     Random rand = new Random();
     GenerateCards decks = new GenerateCards();
     
@@ -27,16 +29,11 @@ public class Player {
     public int getBet(){return bet;}
     public String getNumber(){return name;}
     
-    public void addCard(){
-        counter++;
-        for(int i=2; i<counter; i++){
-            cards[i]=decks.deck[rand.nextInt()];
-        }
-    }
-    
     public void showCards(){
         for(Card c : cards){
             System.out.println(c.getSuit()+" "+c.getValue());
         }
     }
+    
+    public abstract void addCards();
 }

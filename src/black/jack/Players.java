@@ -8,7 +8,11 @@ package black.jack;
  *
  * @author User
  */
-public class Game {
-    public String winOrLose(){return "";}
-    public void game(){}
+public class Players extends Player{
+    
+    
+    public Players(String name, int bet){
+        super(name, bet);
+    }
+    public void addCards(){}
 }

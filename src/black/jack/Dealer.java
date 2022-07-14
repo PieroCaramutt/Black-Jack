@@ -3,29 +3,28 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package black.jack;
-
+import java.util.Random;
 /**
  *
  * @author User
  */
 public class Dealer extends Player{
-    //int counter=2;
-    //private Card[] Dealercards = new Card[counter];
-    //GenerateCards decks = new GenerateCards();
     
-    /*@Override
-    public void addCard(){
-        int sum=0;
-        for(Card.Value s: Card.Value.values()){
-            sum += s.getNum();
-        }
-        if(sum <= 16){
-            counter++;
-            for(int i=2; i<counter; i++){
-            Dealercards[i]=decks.deck[rand.nextInt()];
-            }
-        }
-        else
-            System.out.println("The dealer just can pick up cards if the sum is less than 16");
-    }*/
+    
+    Random random = new Random();
+    
+    public Dealer(int bet){
+        super("Dealer", bet);
+        bet = super.getBet();
+    }
+    
+    /*public void generateCard(){
+        for(int i=0; i<2; i++){
+            dealerCards[i]= dealerDeck.deck[random.nextInt()];
+        }*/
+
+    
+   public void addCards(){};
+
+    
 }

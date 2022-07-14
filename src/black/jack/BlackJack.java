@@ -15,9 +15,11 @@ public class BlackJack {
      */
     public static void main(String[] args)
     {  
-       Player playerOne = new Player("Player One", 100);
+       /*Player playerOne = new Player("Player One", 100);
        Player dealer = new Player("Dealer", playerOne.getBet());
+       
+       playerOne.decks.generate();
+       playerOne.showCards();*/
    }
     
 }
-//STILL WORKING 07/14/2022
