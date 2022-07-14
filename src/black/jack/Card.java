@@ -19,7 +19,16 @@ package black.jack;
 public class Card 
 {
 public enum Suit {diamonds,clubs,hearts,spades};   
-public enum Value {ONE,TWO,THREE,FOUR,FIVE,SIX,SEVEN,EIGHT,NINE,TEN,JACK,QUEEN,KING};
+public enum Value {
+    ONE(1),TWO(2),THREE(3),FOUR(4),FIVE(5),SIX(6),SEVEN(7),EIGHT(8),NINE(9),TEN(10),JACK(10),QUEEN(10),KING(10);
+    
+    private final int num;
+    
+    Value(int _num){
+        num = _num;
+    }
+    public int getNum(){return num;}
+}
 private Suit suit;
 private Value value;
 public Card(Suit s,Value v)

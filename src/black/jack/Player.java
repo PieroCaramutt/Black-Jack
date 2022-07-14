@@ -23,13 +23,13 @@ public class Player {
         bet = _bet;
     }
     
-    public int getBet(){
-        return bet;}
+    public int getCounter(){return counter;}
+    public int getBet(){return bet;}
     public String getNumber(){return name;}
     
     public void addCard(){
         counter++;
-        for(int i=0; i<counter; i++){
+        for(int i=2; i<counter; i++){
             cards[i]=decks.deck[rand.nextInt()];
         }
     }
