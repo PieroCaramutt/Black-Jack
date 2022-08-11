@@ -3,28 +3,41 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package black.jack;
-import java.util.Random;
+import java.util.ArrayList;
+import java.util.Collections;
 /**
  *
  * @author User
  */
 public class Dealer extends Player{
     
+    ArrayList<Card> dealerCards = new ArrayList();
     
-    Random random = new Random();
-    
-    public Dealer(int bet){
+    //Constructor
+    public Dealer(double bet){
         super("Dealer", bet);
-        bet = super.getBet();
+        generate();
+        Collections.shuffle(cards);
+        dealerCards.add(super.cards.get(0));super.cards.remove(0);
+        dealerCards.add(super.cards.get(0));super.cards.remove(0);
     }
     
-    /*public void generateCard(){
-        for(int i=0; i<2; i++){
-            dealerCards[i]= dealerDeck.deck[random.nextInt()];
-        }*/
-
+    public void showCards(){
+        System.out.println("The "+super.getName()+"'s card are:");
+        for(Card c : dealerCards){
+            System.out.println(c.getSuit()+" "+c.getValue());
+        }
+    }
     
-   public void addCards(){};
-
     
-}
+    //Dealer Draws Cards
+    public void drawCards(){
+        int value = dealerCards.get(0).getValue()+dealerCards.get(1).getValue();
+        if(value < 16){
+            dealerCards.add(super.cards.get(0));
+            super.cards.remove(0);
+        }
+        else
+            System.out.println("Dealer cannot draw more cards");
+    };   
+}   

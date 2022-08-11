@@ -3,33 +3,26 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package black.jack;
-import java.util.Random;
-
 /**
  *
  * @author User
  */
-public abstract class Player{
+public abstract class Player extends GenerateCards{
     
-    private int counter = 2;
-    private Card[] cards = new Card[counter];
     private String name;
-    private int bet;
+    private double bet;
     
-    
-    public Player(String num, int _bet){
-        name = num;
+    public Player(String _name, double _bet){
+        name = _name;
         bet = _bet;
     }
     
-    public int getBet(){return bet;}
-    public String getNumber(){return name;}
-    
-    public void showCards(){
-        for(Card c : cards){
-            System.out.println(c.getSuit()+" "+c.getValue());
-        }
+    public String getName(){return name;}
+    public double getBet(){
+        return bet;
     }
     
-    public abstract void addCards();
+    public abstract void showCards();
+    
+    public abstract void drawCards();
 }

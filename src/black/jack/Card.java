@@ -20,13 +20,14 @@ public class Card
 {
 public enum Suit {diamonds,clubs,hearts,spades};   
 public enum Value {
-    ONE(1),TWO(2),THREE(3),FOUR(4),FIVE(5),SIX(6),SEVEN(7),EIGHT(8),NINE(9),TEN(10),JACK(10),QUEEN(10),KING(10);
-    
-    private final int num;
-    
-    Value(int _num){
-        num = _num;
-    }
+            ONE(1),TWO(2),THREE(3),FOUR(4),FIVE(5),SIX(6),SEVEN(7),EIGHT(8),NINE(9),TEN(10),JACK(10),
+            QUEEN(10),KING(10);
+
+            private final int num;
+
+            Value(int _num){
+                num = _num;
+            }
     public int getNum(){return num;}
 }
 
@@ -47,23 +48,9 @@ public Card(Suit s,Value v)
     }
 
     /**
-     * @param suit the suit to set
-     */
-    public void setSuit(Suit suit) {
-        this.suit = suit;
-    }
-
-    /**
      * @return the value
      */
-    public Value getValue() {
-        return value;
-    }
-
-    /**
-     * @param value the value to set
-     */
-    public void setValue(Value value) {
-        this.value = value;
+    public int getValue() {
+        return value.getNum();
     }
 }
