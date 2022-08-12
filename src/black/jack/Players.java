@@ -12,6 +12,8 @@ import java.util.Collections;
 public class Players extends Player{
     
     ArrayList<Card> playerCards = new ArrayList();//Player Cards at least 2
+    private int sumP = 0;
+    private int sum1 = 0;
         
     //Constructor
     public Players(String name, double bet){
@@ -20,6 +22,15 @@ public class Players extends Player{
         Collections.shuffle(cards);
         playerCards.add(super.cards.get(0));super.cards.remove(0);
         playerCards.add(super.cards.get(0));super.cards.remove(0);
+        
+    }
+    
+    //Sum
+    public void sum(){
+        for (Card s : playerCards){
+        sumP += s.getValue();
+                }
+        System.out.println(sumP);
     }
     
     
@@ -28,14 +39,17 @@ public class Players extends Player{
         System.out.println("The "+super.getName()+"'s card are:");
         for(Card c : playerCards){
             System.out.println(c.getSuit()+" "+c.getValue());
-        }
+        }      
     }
     
     //Players Draw Cards
     public void drawCards(){
-        playerCards.add(super.cards.get(0));
+        playerCards.add(super.cards.get(cards.size()-1));
         super.cards.remove(0);
     }
     
+    public double getSumP(){
+        return sumP;
+    }
     
 }

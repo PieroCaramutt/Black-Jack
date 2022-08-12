@@ -10,7 +10,7 @@ package black.jack;
  * @author srinivsi base code
  * @editor Piero Caramutti
  * 
- * Loosely coupling was the oo principles that we used here becasue the objects that we have to created here had to be actualized in 
+ * Loosely coupling was the oo principles that we used here because the objects that we have to created here had to be actualized in 
  * GenerateCards too(GenerateCards.size). 
  * The enums Suit, Value and size in GenerateCards were the values that I edited and the whole code still working without any other change.
  * 

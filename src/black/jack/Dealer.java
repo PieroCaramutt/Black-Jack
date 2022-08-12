@@ -12,7 +12,8 @@ import java.util.Collections;
 public class Dealer extends Player{
     
     ArrayList<Card> dealerCards = new ArrayList();
-    
+    private int sumD = 0;
+    private int sum1 = 0;
     //Constructor
     public Dealer(double bet){
         super("Dealer", bet);
@@ -20,6 +21,15 @@ public class Dealer extends Player{
         Collections.shuffle(cards);
         dealerCards.add(super.cards.get(0));super.cards.remove(0);
         dealerCards.add(super.cards.get(0));super.cards.remove(0);
+        
+    }
+    
+    //sum
+    public void sum(){
+        for (Card s : dealerCards){
+        sumD += s.getValue();
+                }
+        System.out.println(sumD);
     }
     
     public void showCards(){
@@ -33,11 +43,15 @@ public class Dealer extends Player{
     //Dealer Draws Cards
     public void drawCards(){
         int value = dealerCards.get(0).getValue()+dealerCards.get(1).getValue();
-        if(value < 16){
-            dealerCards.add(super.cards.get(0));
+        if(value <= 16){
+            dealerCards.add(super.cards.get(cards.size()-1));
             super.cards.remove(0);
         }
         else
             System.out.println("Dealer cannot draw more cards");
-    };   
+    }
+    
+    public double getSumD(){
+        return sumD;
+    }
 }   
